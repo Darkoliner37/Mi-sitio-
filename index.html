@@ -1,772 +1,158 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premium AI Chatbots for Modern Business</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-<script src="https://cdn.tailwindcss.com/3.4.16"></script>
-<script>tailwind.config={theme:{extend:{colors:{primary:'#2563EB',secondary:'#111827'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
-<style>
-:where([class^="ri-"])::before { content: "\f3c2"; }
-body {
-font-family: 'Inter', sans-serif;
-}
-.hero-gradient {
-background: linear-gradient(120deg, rgba(37, 99, 235, 0.9), rgba(17, 24, 39, 0.95));
-}
-.benefit-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
-}
-.pricing-card {
-transition: all 0.3s ease;
-}
-.pricing-card:hover {
-transform: translateY(-10px);
-}
-.testimonial-card {
-transition: all 0.3s ease;
-}
-.testimonial-card:hover {
-transform: translateY(-5px);
-}
-.faq-item {
-transition: all 0.3s ease;
-}
-input:focus, button:focus {
-outline: none;
-}
-.chatbot-card {
-transition: all 0.3s ease;
-}
-.chatbot-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
-}
-.pattern-bg {
-background-color: #f9fafb;
-background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232563eb' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Premium AI Chatbots for Modern Business</title>
+
+  <!-- Fuentes y estilos externos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+  <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563EB',
+            secondary: '#111827'
+          },
+          borderRadius: {
+            button: '8px'
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+    }
+
+    .benefit-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(37, 99, 235, 0.15);
+    }
+
+    .chatbot-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .pricing-card {
+      transition: all 0.3s ease;
+    }
+
+    .pricing-card:hover {
+      transform: translateY(-10px);
+    }
+
+    .testimonial-card {
+      transition: all 0.3s ease;
+    }
+
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .pattern-bg {
+      background-color: #f9fafb;
+      background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232563eb' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+  </style>
 </head>
-<body class="bg-white">
-<!-- Header -->
-<header class="fixed w-full bg-white shadow-md z-50">
-<div class="container mx-auto px-4 py-3 flex items-center justify-between">
-<a href="#" class="text-3xl font-['Pacifico'] text-primary">logo</a>
-<nav class="hidden md:flex items-center space-x-8">
-<a href="#beneficios" class="text-gray-700 hover:text-primary font-medium">Beneficios</a>
-<a href="#chatbots" class="text-gray-700 hover:text-primary font-medium">Chatbots</a>
-<a href="#precios" class="text-gray-700 hover:text-primary font-medium">Precios</a>
-<a href="#testimonios" class="text-gray-700 hover:text-primary font-medium">Testimonios</a>
-<a href="#faq" class="text-gray-700 hover:text-primary font-medium">FAQ</a>
-</nav>
-<a href="#" class="hidden md:block bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Probar Gratis</a>
-<button class="md:hidden w-10 h-10 flex items-center justify-center text-gray-700" id="mobileMenuButton">
-<i class="ri-menu-line ri-lg"></i>
-</button>
-</div>
-<!-- Mobile menu -->
-<div id="mobileMenu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
-<div class="container mx-auto px-4 py-3 flex flex-col space-y-4">
-<a href="#beneficios" class="text-gray-700 hover:text-primary font-medium py-2">Beneficios</a>
-<a href="#chatbots" class="text-gray-700 hover:text-primary font-medium py-2">Chatbots</a>
-<a href="#precios" class="text-gray-700 hover:text-primary font-medium py-2">Precios</a>
-<a href="#testimonios" class="text-gray-700 hover:text-primary font-medium py-2">Testimonios</a>
-<a href="#faq" class="text-gray-700 hover:text-primary font-medium py-2">FAQ</a>
-<a href="#" class="bg-primary text-white px-6 py-2 !rounded-button font-medium hover:bg-primary/90 transition-colors text-center whitespace-nowrap">Probar Gratis</a>
-</div>
-</div>
-</header>
-<!-- Hero Section -->
-<section class="relative pt-24 overflow-hidden bg-gradient-to-br from-blue-50 to-white">
-<div class="absolute inset-0 z-0" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20abstract%20geometric%20background%20with%20soft%20gradient%20colors%20in%20light%20blue%20and%20white%2C%20elegant%20curves%20and%20flowing%20lines%2C%20creating%20a%20sense%20of%20movement%20and%20innovation%2C%20perfect%20for%20text%20overlay%2C%20minimalist%20and%20clean%20design&width=1920&height=1080&seq=hero4&orientation=landscape'); background-size: cover; background-position: center;"></div>
-<div class="absolute inset-0 bg-gradient-to-r from-white/95 via-white/80 to-transparent z-0"></div>
-<div class="container mx-auto px-4 py-24 md:py-32 relative z-10">
-<div class="flex flex-col md:flex-row items-center">
-<div class="w-full md:w-1/2 text-center md:text-left mb-12 md:mb-0">
-<span class="inline-block bg-primary/10 text-primary px-4 py-2 rounded-full text-sm font-medium mb-6 backdrop-blur-sm">Trusted by 2,500+ Companies</span>
-<h1 class="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-6 [text-shadow:_0_1px_2px_rgb(255_255_255_/_90%)]">Secure & Intelligent AI Solutions</h1>
-<p class="text-xl text-gray-800 mb-8 max-w-xl [text-shadow:_0_1px_2px_rgb(255_255_255_/_90%)]">Transform your customer experience with enterprise-grade AI chatbots. Safe, reliable, and remarkably human.</p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-<a href="#" class="bg-primary text-white px-8 py-3 !rounded-button font-semibold hover:bg-primary/90 transition-colors text-center whitespace-nowrap shadow-lg shadow-primary/20 hover:shadow-xl hover:shadow-primary/30 transform hover:-translate-y-0.5">Start Free Trial</a>
-<a href="#demo" class="bg-white/80 backdrop-blur-sm border-2 border-gray-200 text-gray-700 px-8 py-3 !rounded-button font-semibold hover:bg-white transition-colors text-center whitespace-nowrap flex items-center justify-center shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
-<i class="ri-play-circle-line mr-2"></i>Watch Demo
-</a>
-</div>
-<div class="mt-12 flex items-center justify-center md:justify-start space-x-8">
-<div class="flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-md">
-<div class="w-5 h-5 flex items-center justify-center text-primary">
-<i class="ri-shield-check-line"></i>
-</div>
-<span class="ml-2 text-gray-800 font-medium">Enterprise Security</span>
-</div>
-<div class="flex items-center bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-md">
-<div class="w-5 h-5 flex items-center justify-center text-primary">
-<i class="ri-customer-service-2-line"></i>
-</div>
-<span class="ml-2 text-gray-800 font-medium">24/7 Support</span>
-</div>
-</div>
-</div>
-<div class="w-full md:w-1/2 md:pl-12">
-<div class="relative">
-<div class="absolute -top-6 -right-6 w-32 h-32 bg-primary/10 rounded-full blur-2xl"></div>
-<div class="absolute -bottom-6 -left-6 w-40 h-40 bg-primary/10 rounded-full blur-2xl"></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Beneficios Section -->
-<section id="beneficios" class="py-20 bg-gray-50">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Beneficios que transforman tu negocio</h2>
-<p class="text-xl text-gray-600 max-w-3xl mx-auto">Nuestros chatbots están diseñados para potenciar tu empresa con tecnología de vanguardia.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-<!-- Beneficio 1 -->
-<div class="benefit-card bg-white p-8 rounded-lg shadow-md transition-all duration-300">
-<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6 mx-auto md:mx-0">
-<i class="ri-customer-service-2-line ri-xl text-primary"></i>
-</div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center md:text-left">Atención 24/7</h3>
-<p class="text-gray-600 text-center md:text-left">Tus clientes recibirán respuestas instantáneas en cualquier momento del día, todos los días del año.</p>
-</div>
-<!-- Beneficio 2 -->
-<div class="benefit-card bg-white p-8 rounded-lg shadow-md transition-all duration-300">
-<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6 mx-auto md:mx-0">
-<i class="ri-line-chart-line ri-xl text-primary"></i>
-</div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center md:text-left">Aumenta tus ventas</h3>
-<p class="text-gray-600 text-center md:text-left">Convierte visitantes en clientes con recomendaciones personalizadas y seguimiento automático.</p>
-</div>
-<!-- Beneficio 3 -->
-<div class="benefit-card bg-white p-8 rounded-lg shadow-md transition-all duration-300">
-<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6 mx-auto md:mx-0">
-<i class="ri-translate-2-line ri-xl text-primary"></i>
-</div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center md:text-left">Multilingüe</h3>
-<p class="text-gray-600 text-center md:text-left">Comunícate con clientes de todo el mundo en más de 30 idiomas diferentes de forma natural.</p>
-</div>
-<!-- Beneficio 4 -->
-<div class="benefit-card bg-white p-8 rounded-lg shadow-md transition-all duration-300">
-<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-full mb-6 mx-auto md:mx-0">
-<i class="ri-plug-line ri-xl text-primary"></i>
-</div>
-<h3 class="text-xl font-semibold text-gray-900 mb-3 text-center md:text-left">Fácil integración</h3>
-<p class="text-gray-600 text-center md:text-left">Integra con WhatsApp, Instagram, Facebook, tu web y más plataformas en minutos.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Chatbots Gallery Section -->
-<section id="chatbots" class="py-20">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Nuestros Chatbots Especializados</h2>
-<p class="text-xl text-gray-600 max-w-3xl mx-auto">Soluciones diseñadas para diferentes industrias y necesidades específicas.</p>
-</div>
-<!-- Categorías -->
-<div class="flex flex-wrap justify-center gap-4 mb-12">
-<button class="category-btn bg-primary text-white px-6 py-2 !rounded-full font-medium whitespace-nowrap">Todos</button>
-<button class="category-btn bg-gray-100 text-gray-700 px-6 py-2 !rounded-full font-medium hover:bg-gray-200 whitespace-nowrap">Comercio</button>
-<button class="category-btn bg-gray-100 text-gray-700 px-6 py-2 !rounded-full font-medium hover:bg-gray-200 whitespace-nowrap">Servicios</button>
-<button class="category-btn bg-gray-100 text-gray-700 px-6 py-2 !rounded-full font-medium hover:bg-gray-200 whitespace-nowrap">Atención</button>
-<button class="category-btn bg-gray-100 text-gray-700 px-6 py-2 !rounded-full font-medium hover:bg-gray-200 whitespace-nowrap">Educación</button>
-</div>
-<!-- Chatbots Grid -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-<!-- Chatbot 1 -->
-<div class="chatbot-card bg-white rounded-lg shadow-md overflow-hidden">
-<div class="h-48 bg-gray-200 relative" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20restaurant%20with%20customers%20being%20served%2C%20elegant%20interior%20design%2C%20warm%20lighting%2C%20professional%20photography%20style%2C%20clean%20image%20for%20website&width=600&height=400&seq=rest1&orientation=landscape'); background-size: cover; background-position: center;">
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-<div class="p-4">
-<span class="bg-primary/90 text-white text-xs font-medium px-2 py-1 rounded-full">Restaurantes</span>
-</div>
-</div>
-</div>
-<div class="p-6">
-<div class="flex items-center mb-4">
-<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-3">
-<i class="ri-restaurant-line ri-lg text-primary"></i>
-</div>
-<h3 class="text-xl font-semibold text-gray-900">GastroBot</h3>
-</div>
-<p class="text-gray-600 mb-6">Gestiona reservas, toma pedidos y responde preguntas sobre tu menú y horarios automáticamente.</p>
-<a href="#" class="text-primary font-medium flex items-center hover:text-primary/80">
-Ver demo <i class="ri-arrow-right-line ri-sm ml-1"></i>
-</a>
-</div>
-</div>
-<!-- Chatbot 2 -->
-<div class="chatbot-card bg-white rounded-lg shadow-md overflow-hidden">
-<div class="h-48 bg-gray-200 relative" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20e-commerce%20store%20with%20clothing%20items%2C%20professional%20product%20display%2C%20clean%20background%2C%20high%20quality%20product%20photography%2C%20website%20display&width=600&height=400&seq=shop1&orientation=landscape'); background-size: cover; background-position: center;">
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-<div class="p-4">
-<span class="bg-primary/90 text-white text-xs font-medium px-2 py-1 rounded-full">E-commerce</span>
-</div>
-</div>
-</div>
-<div class="p-6">
-<div class="flex items-center mb-4">
-<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-3">
-<i class="ri-shopping-cart-line ri-lg text-primary"></i>
-</div>
-<h3 class="text-xl font-semibold text-gray-900">ShopBot</h3>
-</div>
-<p class="text-gray-600 mb-6">Recomienda productos, responde dudas sobre stock y envíos, y ayuda a completar compras.</p>
-<a href="#" class="text-primary font-medium flex items-center hover:text-primary/80">
-Ver demo <i class="ri-arrow-right-line ri-sm ml-1"></i>
-</a>
-</div>
-</div>
-<!-- Chatbot 3 -->
-<div class="chatbot-card bg-white rounded-lg shadow-md overflow-hidden">
-<div class="h-48 bg-gray-200 relative" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20medical%20clinic%20reception%20with%20calendar%20appointment%20system%20visible%20on%20computer%20screen%2C%20professional%20healthcare%20environment%2C%20clean%20and%20organized%20space&width=600&height=400&seq=med1&orientation=landscape'); background-size: cover; background-position: center;">
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-<div class="p-4">
-<span class="bg-primary/90 text-white text-xs font-medium px-2 py-1 rounded-full">Servicios</span>
-</div>
-</div>
-</div>
-<div class="p-6">
-<div class="flex items-center mb-4">
-<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-3">
-<i class="ri-calendar-check-line ri-lg text-primary"></i>
-</div>
-<h3 class="text-xl font-semibold text-gray-900">CitaBot</h3>
-</div>
-<p class="text-gray-600 mb-6">Gestiona tu agenda de citas, envía recordatorios y permite a tus clientes reprogramar automáticamente.</p>
-<a href="#" class="text-primary font-medium flex items-center hover:text-primary/80">
-Ver demo <i class="ri-arrow-right-line ri-sm ml-1"></i>
-</a>
-</div>
-</div>
-<!-- Chatbot 4 -->
-<div class="chatbot-card bg-white rounded-lg shadow-md overflow-hidden">
-<div class="h-48 bg-gray-200 relative" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20IT%20support%20desk%20with%20computer%20screens%20showing%20technical%20diagnostics%2C%20professional%20tech%20environment%2C%20clean%20organized%20workspace&width=600&height=400&seq=tech1&orientation=landscape'); background-size: cover; background-position: center;">
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end">
-<div class="p-4">
-<span class="bg-primary/90 text-white text-xs font-medium px-2 py-1 rounded-full">Soporte</span>
-</div>
-</div>
-</div>
-<div class="p-6">
-<div class="flex items-center mb-4">
-<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-3">
-<i class="ri-customer-service-line ri-lg text-primary"></i>
-</div>
-<h3 class="text-xl font-semibold text-gray-900">SoporteBot</h3>
-</div>
-<p class="text-gray-600 mb-6">Resuelve problemas técnicos comunes, guía a usuarios en procesos y escala casos complejos.</p>
-<a href="#" class="text-primary font-medium flex items-center hover:text-primary/80">
-Ver demo <i class="ri-arrow-right-line ri-sm ml-1"></i>
-</a>
-</div>
-</div>
-</div>
-<div class="text-center mt-12">
-<a href="#" class="inline-block bg-primary text-white px-8 py-3 !rounded-button font-semibold hover:bg-primary/90 transition-colors whitespace-nowrap">Ver todos los chatbots</a>
-</div>
-</div>
-</section>
-<!-- CTA Section -->
-<section class="py-20 bg-primary relative overflow-hidden">
-<div class="absolute inset-0 opacity-10" style="background-image: url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');"></div>
-<div class="container mx-auto px-4 relative z-10">
-<div class="max-w-3xl mx-auto text-center">
-<h2 class="text-3xl md:text-4xl font-bold text-white mb-6">¿Listo para revolucionar la atención al cliente?</h2>
-<p class="text-xl text-white/90 mb-8">Únete a más de 2,500 empresas que ya están utilizando nuestros chatbots para aumentar sus ventas y mejorar la satisfacción de sus clientes.</p>
-<a href="#" class="inline-block bg-white text-primary px-8 py-3 !rounded-button font-semibold hover:bg-gray-100 transition-colors whitespace-nowrap">Comenzar prueba gratuita</a>
-</div>
-</div>
-</section>
-<!-- Pricing Section -->
-<section id="precios" class="py-20 pattern-bg">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Choose Your Experience</h2>
-<p class="text-xl text-gray-600 max-w-3xl mx-auto">Select a premium plan and elevate your customer engagement with L'e-Tram's sophisticated AI chatbots.</p>
-</div>
-<div class="flex flex-col lg:flex-row gap-8 max-w-5xl mx-auto">
-<!-- Basic Plan -->
-<div class="pricing-card bg-white rounded-lg shadow-md p-8 flex-1 border border-gray-100">
-<div class="text-center mb-6">
-<h3 class="text-xl font-bold text-gray-900 mb-2">Basic</h3>
-<div class="flex justify-center items-baseline mb-4">
-<span class="text-4xl font-bold text-gray-900">$40</span>
-<span class="text-gray-500 ml-1">/month</span>
-</div>
-<p class="text-gray-600">Essential AI features</p>
-</div>
-<ul class="space-y-3 mb-8">
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-600">1 AI chatbot</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-600">Basic chat features</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-600">Website integration</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-600">Basic customization</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-600">Email support</span>
-</li>
-</ul>
-<a href="#" class="block w-full bg-white border border-primary text-primary text-center px-6 py-3 !rounded-button font-semibold hover:bg-primary/5 transition-colors whitespace-nowrap">Get Started</a>
-</div>
-<!-- Premium Plan -->
-<div class="pricing-card bg-white rounded-lg shadow-md p-8 flex-1 border border-gray-100">
-<div class="text-center mb-6">
-<h3 class="text-xl font-bold text-gray-900 mb-2">Premium</h3>
-<div class="flex justify-center items-baseline mb-4">
-<span class="text-4xl font-bold text-gray-900">$60</span>
-<span class="text-gray-500 ml-1">/month</span>
-</div>
-<p class="text-gray-600">Advanced features & support</p>
-</div>
-<ul class="space-y-3 mb-8">
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-600">1 AI chatbot + Premium features</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-600">Enhanced chat capabilities</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-600">All platform integrations</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-600">Advanced customization</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-600">Priority support</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-600">Multi-platform support</span>
-</li>
-</ul>
-<a href="#" class="block w-full bg-primary text-white text-center px-6 py-3 !rounded-button font-semibold hover:bg-primary/90 transition-colors whitespace-nowrap">Choose Premium</a>
-</div>
-<!-- Premium Pro Plan -->
-<div class="pricing-card bg-white rounded-lg shadow-lg p-8 flex-1 border-2 border-primary relative scale-105 z-10">
-<div class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1 transform translate-y-0 rounded-bl-lg rounded-tr-lg">MOST POPULAR</div>
-<div class="text-center mb-6">
-<h3 class="text-xl font-bold text-gray-900 mb-2">Premium Pro</h3>
-<div class="flex justify-center items-baseline mb-4">
-<span class="text-4xl font-bold text-gray-900">$70</span>
-<span class="text-gray-500 ml-1">/month</span>
-</div>
-<p class="text-gray-600">Ultimate AI experience</p>
-</div>
-<ul class="space-y-3 mb-8">
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-900">1 AI chatbot + All Pro features</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-900">Premium chat experience</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-900">Custom AI training</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-900">White-label solution</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-900">24/7 VIP support</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-900">Advanced customization & API</span>
-</li>
-<li class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
-<i class="ri-check-line"></i>
-</div>
-<span class="text-gray-900">Dedicated success manager</span>
-</li>
-</ul>
-<a href="#" class="block w-full bg-primary text-white text-center px-6 py-3 !rounded-button font-semibold hover:bg-primary/90 transition-colors whitespace-nowrap">Get Premium Pro</a>
-</div>
-</div>
-<div class="text-center mt-12">
-<p class="text-gray-600 mb-4">¿Necesitas un plan personalizado para tu empresa?</p>
-<a href="#" class="text-primary font-medium hover:text-primary/80">Contacta con nuestro equipo de ventas</a>
-</div>
-</div>
-</section>
-<!-- Testimonials Section -->
-<section id="testimonios" class="py-20 bg-white">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Lo que dicen nuestros clientes</h2>
-<p class="text-xl text-gray-600 max-w-3xl mx-auto">Empresas de todos los tamaños confían en nuestros chatbots para mejorar su atención al cliente.</p>
-</div>
-<div class="relative">
-<div class="testimonial-slider flex overflow-x-auto gap-6 pb-8 snap-x snap-mandatory hide-scrollbar">
-<!-- Testimonial 1 -->
-<div class="testimonial-card flex-shrink-0 w-full md:w-1/2 lg:w-1/3 snap-start bg-white rounded-lg shadow-md p-8 border border-gray-100">
-<div class="flex items-center mb-6">
-<div class="w-12 h-12 rounded-full overflow-hidden mr-4" style="background-image: url('https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20middle-aged%20Spanish%20businessman%20with%20short%20dark%20hair%20and%20glasses%2C%20wearing%20a%20blue%20suit%2C%20neutral%20background%2C%20high%20quality%20portrait&width=100&height=100&seq=test1&orientation=squarish'); background-size: cover; background-position: center;"></div>
-<div>
-<h4 class="text-lg font-semibold text-gray-900">Carlos Rodríguez</h4>
-<p class="text-gray-600 text-sm">Director de Marketing, TechSoluciones</p>
-</div>
-</div>
-<p class="text-gray-700 mb-6">"Implementamos el chatbot hace 6 meses y ha sido una revolución. Nuestras conversiones aumentaron un 35% y el tiempo de respuesta se redujo de horas a segundos. El ROI ha sido espectacular."</p>
-<div class="flex text-yellow-400">
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-</div>
-</div>
-<!-- Testimonial 2 -->
-<div class="testimonial-card flex-shrink-0 w-full md:w-1/2 lg:w-1/3 snap-start bg-white rounded-lg shadow-md p-8 border border-gray-100">
-<div class="flex items-center mb-6">
-<div class="w-12 h-12 rounded-full overflow-hidden mr-4" style="background-image: url('https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20young%20Spanish%20female%20business%20owner%20with%20long%20brown%20hair%2C%20wearing%20professional%20attire%2C%20neutral%20background%2C%20high%20quality%20portrait&width=100&height=100&seq=test2&orientation=squarish'); background-size: cover; background-position: center;"></div>
-<div>
-<h4 class="text-lg font-semibold text-gray-900">Laura Martínez</h4>
-<p class="text-gray-600 text-sm">Propietaria, Boutique Elegance</p>
-</div>
-</div>
-<p class="text-gray-700 mb-6">"Como pequeña empresa, no podíamos permitirnos un equipo de atención 24/7. El chatbot ha sido la solución perfecta. Ahora nuestros clientes reciben respuestas inmediatas y hemos aumentado nuestras ventas nocturnas."</p>
-<div class="flex text-yellow-400">
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-half-fill"></i>
-</div>
-</div>
-<!-- Testimonial 3 -->
-<div class="testimonial-card flex-shrink-0 w-full md:w-1/2 lg:w-1/3 snap-start bg-white rounded-lg shadow-md p-8 border border-gray-100">
-<div class="flex items-center mb-6">
-<div class="w-12 h-12 rounded-full overflow-hidden mr-4" style="background-image: url('https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20Spanish%20man%20in%20his%2030s%20with%20beard%2C%20wearing%20casual%20business%20attire%2C%20neutral%20background%2C%20high%20quality%20portrait&width=100&height=100&seq=test3&orientation=squarish'); background-size: cover; background-position: center;"></div>
-<div>
-<h4 class="text-lg font-semibold text-gray-900">Javier Sánchez</h4>
-<p class="text-gray-600 text-sm">CEO, FoodDelivery Express</p>
-</div>
-</div>
-<p class="text-gray-700 mb-6">"La integración con WhatsApp ha sido clave para nuestro negocio. Los clientes pueden hacer pedidos directamente por chat y el bot gestiona todo el proceso. Hemos reducido errores y aumentado la satisfacción."</p>
-<div class="flex text-yellow-400">
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-<i class="ri-star-fill"></i>
-</div>
-</div>
-</div>
-<!-- Navigation Dots -->
-<div class="flex justify-center mt-6 gap-2">
-<button class="w-3 h-3 rounded-full bg-primary" aria-label="Página 1"></button>
-<button class="w-3 h-3 rounded-full bg-gray-300" aria-label="Página 2"></button>
-<button class="w-3 h-3 rounded-full bg-gray-300" aria-label="Página 3"></button>
-</div>
-</div>
-</div>
-</section>
-<!-- FAQ Section -->
-<section id="faq" class="py-20 bg-gray-50">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Preguntas frecuentes</h2>
-<p class="text-xl text-gray-600 max-w-3xl mx-auto">Respuestas a las dudas más comunes sobre nuestros chatbots.</p>
-</div>
-<div class="max-w-3xl mx-auto">
-<!-- Search -->
-<div class="relative mb-10">
-<input type="text" placeholder="Buscar pregunta..." class="w-full px-4 py-3 pl-12 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
-<div class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
-<i class="ri-search-line"></i>
-</div>
-</div>
-<!-- FAQ Items -->
-<div class="space-y-4">
-<!-- FAQ Item 1 -->
-<div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
-<button class="faq-question w-full flex justify-between items-center p-4 bg-white text-left font-medium text-gray-900 hover:bg-gray-50 focus:outline-none" data-faq="1">
-<span>¿Cómo funciona la integración con mi sitio web?</span>
-<div class="w-6 h-6 flex items-center justify-center text-primary">
-<i class="ri-add-line faq-icon-1"></i>
-</div>
-</button>
-<div class="faq-answer hidden p-4 pt-0 bg-white" id="faq-answer-1">
-<p class="text-gray-600">La integración es muy sencilla. Te proporcionamos un código que puedes añadir a tu sitio web en menos de 5 minutos. No requiere conocimientos técnicos avanzados. También ofrecemos plugins para WordPress, Shopify y otras plataformas populares que hacen la integración aún más fácil.</p>
-</div>
-</div>
-<!-- FAQ Item 2 -->
-<div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
-<button class="faq-question w-full flex justify-between items-center p-4 bg-white text-left font-medium text-gray-900 hover:bg-gray-50 focus:outline-none" data-faq="2">
-<span>¿Puedo personalizar las respuestas del chatbot?</span>
-<div class="w-6 h-6 flex items-center justify-center text-primary">
-<i class="ri-add-line faq-icon-2"></i>
-</div>
-</button>
-<div class="faq-answer hidden p-4 pt-0 bg-white" id="faq-answer-2">
-<p class="text-gray-600">¡Absolutamente! Puedes personalizar todas las respuestas del chatbot a través de nuestro panel de control intuitivo. También puedes entrenar al bot con tus propios datos, como preguntas frecuentes, catálogos de productos o información específica de tu negocio. Cuanta más información le proporciones, más preciso será.</p>
-</div>
-</div>
-<!-- FAQ Item 3 -->
-<div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
-<button class="faq-question w-full flex justify-between items-center p-4 bg-white text-left font-medium text-gray-900 hover:bg-gray-50 focus:outline-none" data-faq="3">
-<span>¿El chatbot puede transferir la conversación a un agente humano?</span>
-<div class="w-6 h-6 flex items-center justify-center text-primary">
-<i class="ri-add-line faq-icon-3"></i>
-</div>
-</button>
-<div class="faq-answer hidden p-4 pt-0 bg-white" id="faq-answer-3">
-<p class="text-gray-600">Sí, nuestros chatbots están diseñados para detectar cuando una consulta requiere atención humana. En ese momento, pueden transferir la conversación a un agente disponible, junto con todo el historial de la conversación para contexto. También puedes establecer reglas personalizadas para determinar cuándo debe ocurrir esta transferencia.</p>
-</div>
-</div>
-<!-- FAQ Item 4 -->
-<div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
-<button class="faq-question w-full flex justify-between items-center p-4 bg-white text-left font-medium text-gray-900 hover:bg-gray-50 focus:outline-none" data-faq="4">
-<span>¿Qué plataformas de mensajería soportan vuestros chatbots?</span>
-<div class="w-6 h-6 flex items-center justify-center text-primary">
-<i class="ri-add-line faq-icon-4"></i>
-</div>
-</button>
-<div class="faq-answer hidden p-4 pt-0 bg-white" id="faq-answer-4">
-<p class="text-gray-600">Nuestros chatbots se integran con las principales plataformas de mensajería: WhatsApp Business, Facebook Messenger, Instagram, Telegram, y por supuesto, tu propio sitio web. También ofrecemos una API para integraciones personalizadas con otras plataformas o sistemas propios.</p>
-</div>
-</div>
-<!-- FAQ Item 5 -->
-<div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
-<button class="faq-question w-full flex justify-between items-center p-4 bg-white text-left font-medium text-gray-900 hover:bg-gray-50 focus:outline-none" data-faq="5">
-<span>¿Cuánto tiempo lleva implementar un chatbot?</span>
-<div class="w-6 h-6 flex items-center justify-center text-primary">
-<i class="ri-add-line faq-icon-5"></i>
-</div>
-</button>
-<div class="faq-answer hidden p-4 pt-0 bg-white" id="faq-answer-5">
-<p class="text-gray-600">Con nuestras plantillas prediseñadas, puedes tener un chatbot básico funcionando en menos de 30 minutos. Para chatbots más personalizados y entrenados con datos específicos de tu negocio, el proceso puede llevar entre 1 y 3 días. Nuestro equipo de soporte está disponible para ayudarte en cada paso del proceso.</p>
-</div>
-</div>
-</div>
-<div class="text-center mt-10">
-<p class="text-gray-600 mb-4">¿No encuentras la respuesta que buscas?</p>
-<a href="#" class="text-primary font-medium hover:text-primary/80">Contacta con nuestro equipo de soporte</a>
-</div>
-</div>
-</div>
-</section>
-<!-- Final CTA -->
-<section class="py-20 bg-primary/5">
-<div class="container mx-auto px-4">
-<div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
-<div class="flex flex-col md:flex-row">
-<div class="md:w-1/2 p-10 md:p-12">
-<h2 class="text-3xl font-bold text-gray-900 mb-4">Comienza hoy mismo</h2>
-<p class="text-gray-600 mb-8">Prueba nuestros chatbots gratis durante 14 días. Sin compromiso ni tarjeta de crédito.</p>
-<form class="space-y-4">
-<div>
-<label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-<input type="email" id="email" placeholder="tu@email.com" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
-</div>
-<div>
-<label for="company" class="block text-sm font-medium text-gray-700 mb-1">Empresa</label>
-<input type="text" id="company" placeholder="Nombre de tu empresa" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
-</div>
-<button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-semibold hover:bg-primary/90 transition-colors whitespace-nowrap">Crear cuenta gratis</button>
-</form>
-</div>
-<div class="md:w-1/2 bg-gray-100 p-10 md:p-12 flex items-center justify-center" style="background-image: url('https://readdy.ai/api/search-image?query=modern%20AI%20chatbot%20interface%20with%20multiple%20conversation%20bubbles%2C%20clean%20design%2C%20blue%20color%20scheme%2C%20professional%20business%20application%2C%20showing%20customer%20service%20interaction&width=600&height=600&seq=cta1&orientation=squarish'); background-size: cover; background-position: center;">
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Footer -->
-<footer class="bg-gray-900 text-white pt-16 pb-8">
-<div class="container mx-auto px-4">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
-<!-- Logo & Info -->
-<div class="lg:col-span-2">
-<a href="#" class="text-3xl font-['Pacifico'] text-white mb-4 inline-block">logo</a>
-<p class="text-gray-400 mb-6 max-w-md">Transformamos la atención al cliente con chatbots inteligentes impulsados por IA. Más de 2,500 empresas confían en nuestros servicios.</p>
-<div class="flex space-x-4">
-<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
-<i class="ri-facebook-fill"></i>
-</a>
-<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
-<i class="ri-twitter-fill"></i>
-</a>
-<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
-<i class="ri-instagram-fill"></i>
-</a>
-<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition-colors">
-<i class="ri-linkedin-fill"></i>
-</a>
-</div>
-</div>
-<!-- Links 1 -->
-<div>
-<h4 class="text-lg font-semibold mb-4">Productos</h4>
-<ul class="space-y-2">
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Chatbots</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Integraciones</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Análisis</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Personalización</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">API</a></li>
-</ul>
-</div>
-<!-- Links 2 -->
-<div>
-<h4 class="text-lg font-semibold mb-4">Recursos</h4>
-<ul class="space-y-2">
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Guías</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Webinars</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Casos de éxito</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Documentación</a></li>
-</ul>
-</div>
-<!-- Links 3 -->
-<div>
-<h4 class="text-lg font-semibold mb-4">Empresa</h4>
-<ul class="space-y-2">
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Sobre nosotros</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contacto</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Carreras</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Prensa</a></li>
-<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Partners</a></li>
-</ul>
-</div>
-</div>
-<!-- Newsletter -->
-<div class="border-t border-gray-800 pt-8 pb-4">
-<div class="max-w-md mx-auto lg:mx-0">
-<h4 class="text-lg font-semibold mb-4">Suscríbete a nuestro newsletter</h4>
-<p class="text-gray-400 mb-4">Recibe las últimas novedades y consejos sobre chatbots e IA.</p>
-<form class="flex">
-<input type="email" placeholder="Tu email" class="flex-1 px-4 py-2 rounded-l-lg border-none bg-gray-800 text-white focus:ring-2 focus:ring-primary/20">
-<button type="submit" class="bg-primary text-white px-4 py-2 rounded-r-lg font-medium hover:bg-primary/90 transition-colors whitespace-nowrap">Suscribirse</button>
-</form>
-</div>
-</div>
-<!-- Bottom Footer -->
-<div class="border-t border-gray-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-<p class="text-gray-400 text-sm mb-4 md:mb-0">© 2025 AI Chatbots. Todos los derechos reservados.</p>
-<div class="flex space-x-6">
-<a href="#" class="text-gray-400 hover:text-white text-sm">Términos de servicio</a>
-<a href="#" class="text-gray-400 hover:text-white text-sm">Política de privacidad</a>
-<a href="#" class="text-gray-400 hover:text-white text-sm">Cookies</a>
-</div>
-</div>
-</div>
-</footer>
-<!-- Floating Chat Button -->
-<div class="fixed bottom-6 right-6 z-50">
-<button class="w-16 h-16 bg-primary rounded-full shadow-lg flex items-center justify-center hover:bg-primary/90 transition-colors" id="chatButton">
-<i class="ri-message-3-line ri-xl text-white"></i>
-</button>
-</div>
-<!-- Mobile Menu Script -->
-<script id="mobileMenuScript">
-document.addEventListener('DOMContentLoaded', function() {
-const mobileMenuButton = document.getElementById('mobileMenuButton');
-const mobileMenu = document.getElementById('mobileMenu');
-mobileMenuButton.addEventListener('click', function() {
-if (mobileMenu.classList.contains('hidden')) {
-mobileMenu.classList.remove('hidden');
-} else {
-mobileMenu.classList.add('hidden');
-}
-});
-});
-</script>
-<!-- FAQ Script -->
-<script id="faqScript">
-document.addEventListener('DOMContentLoaded', function() {
-const faqQuestions = document.querySelectorAll('.faq-question');
-faqQuestions.forEach(question => {
-question.addEventListener('click', function() {
-const faqId = this.getAttribute('data-faq');
-const answer = document.getElementById(`faq-answer-${faqId}`);
-const icon = document.querySelector(`.faq-icon-${faqId}`);
-if (answer.classList.contains('hidden')) {
-answer.classList.remove('hidden');
-icon.classList.remove('ri-add-line');
-icon.classList.add('ri-subtract-line');
-} else {
-answer.classList.add('hidden');
-icon.classList.remove('ri-subtract-line');
-icon.classList.add('ri-add-line');
-}
-});
-});
-});
-</script>
-<!-- Chat Button Script -->
-<script id="chatButtonScript">
-document.addEventListener('DOMContentLoaded', function() {
-const chatButton = document.getElementById('chatButton');
-chatButton.addEventListener('click', function() {
-alert('¡Hola! Esta es una demostración de nuestro chatbot. En una implementación real, aquí se abriría la ventana de chat.');
-});
-});
-</script>
+
+<body class="bg-secondary text-white">
+
+  <!-- HEADER -->
+  <header class="text-center py-6 bg-secondary">
+    <a href="#" class="text-3xl font-['Pacifico'] text-white mb-4 inline-block">row-band</a>
+    <p class="text-sm text-gray-300">Premium AI Chatbots for Modern Business</p>
+  </header>
+
+  <!-- HERO -->
+  <section class="text-center py-20 bg-gradient-to-b from-primary to-secondary">
+    <h1 class="text-5xl font-bold mb-6">Crea tu chatbot perfecto</h1>
+    <p class="text-xl mb-8">Prueba una demo interactiva, luego elige tu nivel</p>
+    <a href="#pricing" class="px-6 py-3 bg-white text-primary font-bold rounded-button">Ver precios</a>
+  </section>
+
+  <!-- BENEFICIOS -->
+  <section class="p-10 pattern-bg text-black text-center">
+    <h2 class="text-3xl font-bold mb-8">¿Por qué elegir row-band?</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="benefit-card bg-white p-6 rounded-button shadow">
+        <h3 class="font-bold text-xl mb-2">Fácil de usar</h3>
+        <p>No necesitas saber programar</p>
+      </div>
+      <div class="benefit-card bg-white p-6 rounded-button shadow">
+        <h3 class="font-bold text-xl mb-2">Adaptable</h3>
+        <p>Funciona para ventas, soporte y más</p>
+      </div>
+      <div class="benefit-card bg-white p-6 rounded-button shadow">
+        <h3 class="font-bold text-xl mb-2">Actualizable</h3>
+        <p>Puedes mejorarlo cuando quieras</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRECIOS -->
+  <section id="pricing" class="p-10 text-center">
+    <h2 class="text-3xl font-bold mb-8">Planes disponibles</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <div class="pricing-card bg-white text-black p-6 rounded-button shadow">
+        <h3 class="text-xl font-bold mb-2">Básico</h3>
+        <p class="mb-4">Ideal para empezar</p>
+        <p class="text-2xl font-bold mb-4">€40</p>
+        <button class="bg-primary text-white px-4 py-2 rounded-button">Elegir</button>
+      </div>
+
+      <div class="pricing-card bg-white text-black p-6 rounded-button shadow border-4 border-primary scale-105">
+        <h3 class="text-xl font-bold mb-2">Premium</h3>
+        <p class="mb-4">Más funciones y control</p>
+        <p class="text-2xl font-bold mb-4">€60</p>
+        <button class="bg-primary text-white px-4 py-2 rounded-button">Más popular</button>
+      </div>
+
+      <div class="pricing-card bg-white text-black p-6 rounded-button shadow">
+        <h3 class="text-xl font-bold mb-2">Premium PRO</h3>
+        <p class="mb-4">Funciones avanzadas + soporte</p>
+        <p class="text-2xl font-bold mb-4">€70</p>
+        <button class="bg-primary text-white px-4 py-2 rounded-button">Elegir</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="p-10 text-center bg-gray-100 text-black">
+    <h2 class="text-3xl font-bold mb-8">Preguntas frecuentes</h2>
+    <div class="faq-item max-w-3xl mx-auto">
+      <details class="mb-4">
+        <summary class="cursor-pointer font-semibold">¿Puedo probar el chatbot antes?</summary>
+        <p class="mt-2">Sí, ofrecemos una demo visual donde puedes experimentar cómo funcionaría tu chatbot.</p>
+      </details>
+      <details class="mb-4">
+        <summary class="cursor-pointer font-semibold">¿Puedo actualizar mi plan?</summary>
+        <p class="mt-2">Claro, puedes empezar por uno básico e ir subiendo cuando lo necesites.</p>
+      </details>
+      <details>
+        <summary class="cursor-pointer font-semibold">¿Qué incluye el plan PRO?</summary>
+        <p class="mt-2">Incluye integraciones personalizadas, soporte prioritario y funciones exclusivas.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center py-6 bg-secondary text-sm text-gray-400">
+    © 2025 row-band. Todos los derechos reservados.
+  </footer>
+
 </body>
 </html>
+
