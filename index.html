@@ -1,37 +1,5 @@
-<!DOCTYPE html>
-package com.myapp.controller;
-
-import com.myapp.EmailSender;
-import com.myapp.model.Email;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-
-import javax.mail.MessagingException;
-
-public class ButtonController {
-
-    @FXML
-    private Button contactButton;
-
-    @FXML
-    void contactSalesTeam(ActionEvent event) {
-        Email email = new Email("your-email@gmail.com", "your-password", "rowband84@gmail.com", "Contact Request", "I want to contact the sales team.");
-        EmailSender emailSender = new EmailSender();
-        try {
-            emailSender.sendEmail(email);
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Success");
-            alert.setHeaderText(null);
-            alert.setContentText("Email sent successfully!");
-            alert.showAndWait();
-        } catch (MessagingException e) {
-            e.printStackTrace();
-        }
-    }
-}
-
+<!DOCTYPE html>    
+<Button fx:id="contactButton" layoutX="140.0" layoutY="210.0" mnemonicParsing="false" text="Contact Sales Team" /> 
 <html lang="es">
 <head>
 <meta charset="UTF-8">
